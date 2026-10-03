@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4G X CHEATZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>  
+<body>  
+
+<div id="playOverlay">
+    <h2 style="color:#008cff; font-weight:900; letter-spacing:2px; text-shadow:0 0 15px var(--primary-glow);">S4G X CHEATZ</h2>
+    <p style="color:var(--text-gray); font-size:13px;">Tap below to start website</p>
+    <button class="start-site-btn" onclick="startWebsite()">ENTER WEBSITE 🚀</button>
+</div>
+
+<div class="bg-video-container"></div>
+<div class="bg-video-overlay"></div>
+
+<div class="announcement-bar" id="announcementBar">🔥 NEW VIP MOD APPS & BLUEPRINTS AVAILABLE NOW!</div>
+
+<header>  
+    <div class="logo-wrapper" onclick="handleLogoClick()">  
+        <img src="https://i.ibb.co/tppN1kF0/logo.jpg" id="headerLogoImg" class="logo-img" alt="Logo">  
+        <div class="logo-text">S4G <span>X CHEATZ</span></div>  
+    </div>  
+
+    <div class="sl-clock-box">
+        <span class="sl-clock-label">🇱🇰 SRI LANKA TIME</span>
+        <span class="sl-clock-time" id="slClock">00:00:00 AM</span>
+    </div>
+</header>  
+
+<section id="homePage" class="page-section active">  
+    <div class="hero">  
+        <div class="status-badge"><span class="active-dot"></span> VERSION 2026 ONLINE</div>  
+        <h1>UNDETECTED</h1>  
+        <div class="typing-box"><span id="typingText"></span><span class="typing-cursor">&nbsp;</span></div>  
+        <p>S4G X CHEATZ crafts high-performance assistants, settings optimization blueprints and game utility modules for gaming players.</p>  
+
+        <div class="stats-grid">  
+            <div class="stat-card"><h2 id="customerCount">0</h2><p>CUSTOMERS</p></div>  
+            <div class="stat-card"><h2 id="projectCount">0</h2><p>PROJECTS</p></div>  
+            <div class="stat-card"><h2 id="modApkCount">0</h2><p>MOD APPS</p></div>  
+        </div>  
+
+        <div style="display:flex; flex-direction:column; gap:12px; max-width:350px; margin:auto">  
+            <button class="btn btn-primary" onclick="switchPage('storyPage')">EXPLORE ARSENAL →</button>  
+            <button class="btn btn-secondary" onclick="switchPage('proofsPage')">PAYMENT PROOFS 🛡</button>  
+        </div>  
+    </div>  
+
+    <section class="why-section">  
+        <div class="why-small-title">UNMATCHED POWER</div>  
+        <h2 class="why-title">WHY CHOOSE <span>S4G.</span></h2>  
+        <div class="features-list">  
+            <div class="feature-card"><div class="feature-icon">✧</div><div class="feature-content"><h3 class="feature-title">PREMIUM GAMING PROJECTS</h3><p class="feature-text">Browse projects organized by Android, iOS and PC categories.</p></div></div>  
+            <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-content"><h3 class="feature-title">INSTANT ORDER</h3><p class="feature-text">Select a project and contact us directly through WhatsApp.</p></div></div>  
+        </div>  
+    </section>  
+
+    <div style="margin-top:55px; text-align:center">  
+        <h3 style="font-size:13px; color:var(--text-gray); letter-spacing:2px">NEED HELP OR WANT TO BUY?</h3>  
+        <div class="social-grid">  
+            <a href="#" id="linkWhatsapp" class="social-btn social-whatsapp" onclick="incrementCustomer()" target="_blank">WHATSAPP</a>  
+            <a href="#" id="linkWaChannel" class="social-btn social-whatsapp" style="background:#128C7E;" target="_blank">WA CHANNEL</a>  
+            <a href="#" id="linkTelegram" class="social-btn social-telegram" target="_blank">TELEGRAM</a>  
+            <a href="#" id="linkTiktok" class="social-btn social-tiktok" target="_blank">TIKTOK</a>  
+            <a href="#" id="linkYoutube" class="social-btn social-youtube" target="_blank">S4G X CHEATZ</a>  
+            <a href="#" id="linkFb" class="social-btn social-facebook" target="_blank" style="grid-column:span 2">FACEBOOK PAGE</a>  
+        </div>  
+    </div>  
+</section>  
+
+<section id="storyPage" class="page-section">  
+    <div style="font-size:32px; font-weight:950; margin-bottom:6px;">STORE</div>  
+    <div style="color:var(--text-gray); font-size:13px; margin-bottom:25px;">Select your platform or category</div>  
+    
+    <div class="category-grid">  
+        <div class="category-card" onclick="openCategory('iOS')">  
+            <div class="category-name">iOS</div>  
+            <div class="category-count" id="iosCount">0 PRODUCTS</div>  
+        </div>  
+        <div class="category-card" onclick="openCategory('Android')">  
+            <div class="category-name">ANDROID</div>  
+            <div class="category-count" id="androidCount">0 PRODUCTS</div>  
+        </div>  
+        <div class="category-card" onclick="openCategory('PC')">  
+            <div class="category-name">PC</div>  
+            <div class="category-count" id="pcCount">0 PRODUCTS</div>  
+        </div>  
+        <div class="category-card" onclick="openModSelection()">  
+            <div>
+                <div class="category-name" style="color:#00ffcc;">MOD APP FREE</div>  
+                <small style="color:#aaa; font-size:10px;">Free & Paid Mods</small>
+            </div>
+            <div class="category-count" id="modCount" style="color:#00ffcc;">0 MODS</div>  
+        </div>  
+    </div>  
+</section>  
+
+<section id="modTypePage" class="page-section">  
+    <div class="category-header">  
+        <button class="back-btn" onclick="switchPage('storyPage')">← BACK</button>  
+        <div>  
+            <h2 style="color:#00ffcc;">MOD APP FREE CATEGORIES</h2>  
+            <small style="color:var(--text-gray)">Select Type</small>  
+        </div>  
+    </div>  
+    
+    <div class="category-grid">  
+        <div class="category-card" onclick="openModCategory('Free')">  
+            <div class="category-name" style="color:#00ff66;">FREE MOD APP</div>  
+            <div class="category-count" id="freeModCount">0 MODS</div>  
+        </div>  
+        <div class="category-card" onclick="openModCategory('Paid')">  
+            <div class="category-name" style="color:#ff0055;">PAID MOD APP</div>  
+            <div class="category-count" id="paidModCount">0 MODS</div>  
+        </div>  
+    </div>  
+</section>  
+
+<section id="categoryPage" class="page-section">  
+    <div class="category-header">  
+        <button class="back-btn" id="categoryBackBtn" onclick="switchPage('storyPage')">← BACK</button>  
+        <div>  
+            <h2 id="categoryTitle" style="color:var(--primary)">PROJECTS</h2>  
+            <small id="categorySubtitle" style="color:var(--text-gray)">Products</small>  
+        </div>  
+    </div>  
+    <div class="projects-grid" id="categoryProjectsContainer"></div>  
+</section>  
+
+<section id="proofsPage" class="page-section">  
+    <h2 style="color:var(--primary); margin-bottom:10px">PAYMENT PROOFS</h2>  
+    <p style="color:var(--text-gray); font-size:14px; margin-bottom:20px">Customer feedback and payment confirmations.</p>  
+    <div class="proofs-grid" id="proofsContainer"></div>  
+</section>  
+
+<section id="supportPage" class="page-section" style="text-align:center;">  
+    <h2 style="color:var(--primary); margin-bottom:10px">GET SUPPORT</h2>  
+    <p style="color:var(--text-gray); font-size:14px; margin-bottom:20px">Reach out to us directly through WhatsApp.</p>  
+    
+    <div style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:16px;">  
+        <div style="background:var(--card-bg); padding:20px; border-radius:15px; border:1px solid var(--border-color); box-shadow: 0 8px 25px rgba(0,0,0,0.6);">
+            <img src="https://i.ibb.co/R4bCH8PC/dev.jpg" id="devProfileImg" class="dev-profile-img" alt="Dev Photo">
+            <h3 style="font-size:16px;">S4G Developer Team Contact</h3>
+            <p style="font-size:12px; color:var(--text-gray); margin-top:5px;">Contact lead developer directly</p>  
+            <a href="#" id="devContactBtn" class="blinking-dev-btn" onclick="incrementCustomer()" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="btn-icon-logo" alt="WhatsApp">
+                <span>S4G DEVELOPER TEAM CONTACT</span>
+            </a>
+        </div>
+
+        <div style="background:var(--card-bg); padding:20px; border-radius:15px; border:1px solid var(--border-color); box-shadow: 0 8px 25px rgba(0,0,0,0.6);">
+            <img src="https://i.ibb.co/N64f43X2/contact.jpg" id="s4gContactImg" class="dev-profile-img" alt="S4G Photo">
+            <h3 style="font-size:16px;">S4G Contact</h3>
+            <p style="font-size:12px; color:var(--text-gray); margin-top:5px;">Direct support line</p>  
+            <a href="#" id="s4gContactBtn" class="blinking-dev-btn" style="background:linear-gradient(135deg, #008cff, #00c8ff);" onclick="incrementCustomer()" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="btn-icon-logo" alt="WhatsApp">
+                <span>S4G CONTACT</span>
+            </a>
+        </div>
+    </div>  
+</section>  
+
+<nav class="bottom-nav">  
+    <span class="nav-item active" onclick="switchPage('homePage')">🏠 HOME</span>  
+    <span class="nav-item" onclick="switchPage('storyPage')">🛒 STORE</span>  
+    <span class="nav-item" onclick="switchPage('proofsPage')">🛡 PROOFS</span>  
+    <span class="nav-item" onclick="switchPage('supportPage')">💬 SUPPORT</span>  
+</nav>  
+
+<div class="modal-overlay" id="loginModal">
+    <div class="modal-box" style="max-width:350px;">
+        <div class="modal-header">
+            <h2>ADMIN LOGIN</h2>
+            <button class="close-btn" onclick="closeModal('loginModal')">✕</button>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="adminPassword" class="form-control" placeholder="Enter password">
+        </div>
+        <button class="btn btn-primary" onclick="adminLogin()">LOGIN</button>
+    </div>
+</div>
+
+<div class="modal-overlay" id="adminModal">  
+    <div class="modal-box">  
+        <div class="modal-header">  
+            <h2>ADMIN CONTROL PANEL</h2>  
+            <button class="close-btn" onclick="closeAdmin()">✕</button>  
+        </div>  
+
+        <div class="admin-nav-btns">  
+            <button class="active" onclick="switchAdminTab('tabSettings', this)">SETTINGS</button>  
+            <button onclick="switchAdminTab('tabProject', this)">PROJECT</button>  
+            <button onclick="switchAdminTab('tabMod', this)">MOD APP</button>  
+            <button onclick="switchAdminTab('tabProof', this)">PROOF</button>  
+            <button onclick="switchAdminTab('tabManage', this)">MANAGE</button>  
+        </div>  
+
+        <div id="tabSettings" class="admin-tab active">  
+            <div class="form-group"><label>WhatsApp Number</label><input id="settingWhatsapp" class="form-control" placeholder="94712345678"></div>  
+            <div class="form-group"><label>WhatsApp Channel Link</label><input id="settingWaChannel" class="form-control" placeholder="https://whatsapp.com/channel/..."></div>  
+            <div class="form-group"><label>Announcement Bar Text (Optional)</label><input id="settingNotice" class="form-control" placeholder="🔥 New VIP Mods Available!"></div>  
+            <div class="form-group"><label>Telegram Link</label><input id="settingTelegram" class="form-control" placeholder="https://t.me/..."></div>  
+            <div class="form-group"><label>TikTok Link</label><input id="settingTiktok" class="form-control" placeholder="https://tiktok.com/..."></div>  
+            <div class="form-group"><label>YouTube Link</label><input id="settingYoutube" class="form-control" placeholder="https://youtube.com/..."></div>  
+            <div class="form-group"><label>Facebook Link</label><input id="settingFacebook" class="form-control" placeholder="https://facebook.com/..."></div>  
+            <div class="form-group"><label>Typing Text</label><input id="settingTyping" class="form-control" placeholder="Premium S4G X CHEATZ Assistant"></div>  
+            <div class="form-group"><label>Gaming Logo (Image URL)</label><input id="settingHeaderLogo" class="form-control" placeholder="https://..."></div>
+            <div class="form-group"><label>Developer WhatsApp Number</label><input id="settingDevNumber" class="form-control" placeholder="94700000000"></div>  
+            <div class="form-group"><label>Developer Photo DP (Image URL)</label><input id="settingDevPhoto" class="form-control" placeholder="https://..."></div>  
+            <div class="form-group"><label>S4G Contact WhatsApp Number</label><input id="settingS4gNumber" class="form-control" placeholder="94700000000"></div>  
+            <div class="form-group"><label>S4G Contact Logo/DP (Image URL)</label><input id="settingS4gPhoto" class="form-control" placeholder="https://..."></div>  
+            <button class="btn btn-primary" onclick="saveSettingsFromAdmin()">SAVE SETTINGS</button>  
+        </div>  
+
+        <div id="tabMod" class="admin-tab">  
+            <h3 style="margin-bottom:15px">ADD MOD APP</h3>  
+            <div class="form-group"><label>Mod Name</label><input id="modName" class="form-control" placeholder="Mod Name"></div>  
+            <div class="form-group"><label>Mod Image URL</label><input id="modImage" class="form-control" placeholder="https://..."></div>  
+            
+            <div class="form-group">  
+                <label>Platform / Category</label>  
+                <div class="custom-select-wrapper" id="customModPlatformWrapper">
+                    <div class="custom-select-trigger" onclick="toggleCustomSelect('customModPlatformWrapper')">
+                        <span id="customModPlatformLabel">Android</span>
+                    </div>
+                    <div class="custom-options">
+                        <div class="custom-option selected" onclick="selectCustomOption('customModPlatformWrapper', 'Android', 'Android')">Android</div>
+                        <div class="custom-option" onclick="selectCustomOption('customModPlatformWrapper', 'iOS', 'iOS')">iOS</div>
+                        <div class="custom-option" onclick="selectCustomOption('customModPlatformWrapper', 'PC', 'PC')">PC</div>
+                    </div>
+                    <input type="hidden" id="modPlatform" value="Android">
+                </div>
+            </div>  
+
+            <div class="form-group">  
+                <label>Type</label>  
+                <div class="custom-select-wrapper" id="customModTypeWrapper">
+                    <div class="custom-select-trigger" onclick="toggleCustomSelect('customModTypeWrapper')">
+                        <span id="customModTypeLabel">Free Mod</span>
+                    </div>
+                    <div class="custom-options">
+                        <div class="custom-option selected" onclick="selectCustomOption('customModTypeWrapper', 'Free', 'Free Mod'); handleModTypeChange('Free');">Free Mod</div>
+                        <div class="custom-option" onclick="selectCustomOption('customModTypeWrapper', 'Paid', 'Paid Mod'); handleModTypeChange('Paid');">Paid Mod</div>
+                    </div>
+                    <input type="hidden" id="modType" value="Free">
+                </div>
+            </div>  
+
+            <div class="form-group" id="modPriceGroup" style="display:none;">
+                <label>Mod Price</label>
+                <input id="modPrice" class="form-control" placeholder="e.g. 1500 LKR">
+            </div>
+
+            <div class="form-group" id="modLinkGroup">
+                <label>Download Link / APK Link</label>
+                <input id="modLink" class="form-control" placeholder="https://...">
+            </div>  
+            <button class="btn btn-primary" onclick="saveMod()">SAVE MOD APP</button>  
+        </div>  
+
+        <div id="tabProject" class="admin-tab">  
+            <h3 id="projectFormTitle" style="margin-bottom:15px">ADD PROJECT</h3>  
+            <div class="form-group"><label>Project Name</label><input id="projectName" class="form-control" placeholder="Project Name"></div>  
+            
+            <div class="form-group">  
+                <label>Category</label>  
+                <div class="custom-select-wrapper" id="customCategoryWrapper">
+                    <div class="custom-select-trigger" onclick="toggleCustomSelect('customCategoryWrapper')">
+                        <span id="customCategoryLabel">iOS</span>
+                    </div>
+                    <div class="custom-options">
+                        <div class="custom-option selected" onclick="selectCustomOption('customCategoryWrapper', 'iOS', 'iOS')">iOS</div>
+                        <div class="custom-option" onclick="selectCustomOption('customCategoryWrapper', 'Android', 'Android')">Android</div>
+                        <div class="custom-option" onclick="selectCustomOption('customCategoryWrapper', 'PC', 'PC')">PC</div>
+                    </div>
+                    <input type="hidden" id="projectPlatform" value="iOS">
+                </div>
+            </div>  
+
+            <div class="form-group"><label>Price</label><input id="projectPrice" class="form-control" placeholder="1500 LKR"></div>  
+            
+            <div class="form-group">
+                <label>Stock Status</label>
+                <div class="custom-select-wrapper" id="customStockWrapper">
+                    <div class="custom-select-trigger" onclick="toggleCustomSelect('customStockWrapper')">
+                        <span id="customStockLabel">IN STOCK</span>
+                    </div>
+                    <div class="custom-options">
+                        <div class="custom-option selected" onclick="selectCustomOption('customStockWrapper', 'true', 'IN STOCK')">IN STOCK</div>
+                        <div class="custom-option" onclick="selectCustomOption('customStockWrapper', 'false', 'OUT OF STOCK')">OUT OF STOCK</div>
+                    </div>
+                    <input type="hidden" id="projectStock" value="true">
+                </div>
+            </div>  
+
+            <div class="form-group"><label>YouTube Video Link</label><input id="projectVideo" class="form-control" placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/..."></div>  
+            <div class="form-group"><label>Description</label><textarea id="projectDescription" class="form-control" rows="3" placeholder="Project details..."></textarea></div>  
+            <div class="form-row">  
+                <button class="btn btn-cancel" onclick="resetProjectForm()">CLEAR</button>  
+                <button id="projectSaveButton" class="btn btn-primary" onclick="saveProject()">SAVE PROJECT</button>  
+            </div>  
+        </div>  
+
+        <div id="tabProof" class="admin-tab">  
+            <h3 style="margin-bottom:15px">ADD PAYMENT PROOF</h3>  
+            <div class="form-group"><label>Customer Name</label><input id="proofName" class="form-control" placeholder="Customer Name"></div>  
+            
+            <div class="form-group">
+                <label>Select Proof Image from Phone</label>
+                <input type="file" id="proofImageFile" class="form-control" accept="image/*" style="padding: 9px;">
+            </div>  
+
+            <div class="form-group"><label>Proof Details</label><textarea id="proofText" class="form-control" rows="3" placeholder="Payment proof description..."></textarea></div>  
+            <div class="form-row">  
+                <button class="btn btn-cancel" onclick="clearProofForm()">CLEAR</button>  
+                <button class="btn btn-primary" onclick="saveProof()">SAVE PROOF</button>  
+            </div>  
+        </div>  
+
+        <div id="tabManage" class="admin-tab">  
+            <h3 style="margin-bottom:15px">ALL PROJECTS</h3>  
+            <div id="adminProjectList" class="admin-list"></div>  
+            
+            <h3 style="margin:25px 0 15px">ALL MOD APPS</h3>  
+            <div id="adminModList" class="admin-list"></div>  
+
+            <h3 style="margin:25px 0 15px">ALL PROOFS</h3>  
+            <div id="adminProofList" class="admin-list"></div>  
+
+            <div class="reset-section">
+                <div class="reset-title">SYSTEM RESTART / DATA RESET</div>
+                <button class="btn-reset" onclick="resetCustomersCount()">🔄 CUSTOMERS RESTART (Reset Customers to 0)</button>
+                <button class="btn-reset" onclick="resetProjectsData()">🔄 PROJECT RESTART (Clear All Projects)</button>
+                <button class="btn-reset" onclick="resetModsData()">🔄 MOD APP RESTART (Clear All Mods)</button>
+                <button class="btn-reset" onclick="resetProofsData()">🔄 PROOF RESTART (Clear Proof Images)</button>
+                <button class="btn-reset" style="background:red; color:white; margin-top:5px;" onclick="resetAllData()">⚠️ RESTART ALL DATA</button>
+            </div>
+        </div>  
+    </div>  
+</div>  
+
+<script src="script.js"></script>
+</body>
+</html>
